@@ -1,0 +1,34 @@
+
+<div style="margin: 100px;">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Nombre -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let character"> {{character.name}} </td>
+        </ng-container>
+
+        <!-- Esatdo -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let character"> {{character.name}} </td>
+        </ng-container>
+
+        <!-- Acciones -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let character">
+                <!-- Boton Acciones -->
+                <button mat-icon-button>
+                    <mat-icon color="accent">remove_red_eye</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+</div>
